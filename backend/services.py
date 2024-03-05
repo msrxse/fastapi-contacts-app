@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, List
 
 import database as _database
 import models as _models
@@ -27,6 +27,8 @@ async def create_contact(
     db.add(contact)
     db.commit()
     db.refresh(contact)
-
     return _schemas.Contact.from_orm(contact)
 
+async def get_all_contacts(db:"Session") -> List[_schemas.Contact]:
+    contacts = db.query(_models.Contact).all()
+    return list(map(_schemas.Contact.from_orm, contacts))
