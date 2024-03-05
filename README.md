@@ -1,3 +1,8 @@
+# About
+
+- Fullstack Python-FastAPI and React application to manage contacts.
+- Uses postgreSQL in Docker container
+
 # Creating postgres database in docker container
 
 1. Create docker container (will host database)
@@ -91,4 +96,4 @@ We now added the new tables to the database and to test you can open the running
 
 # TODOS
 
-- 36:24
+- [ ] Add docker-compose
